@@ -41,7 +41,7 @@ jobs:
       # run tests!
       - run: gradle test
   test:
-     docker:
+    docker:
       - image: circleci/openjdk:8-jdk
       
     steps:
