@@ -37,9 +37,6 @@ jobs:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
-
-      # run tests!
-      - run: gradle test
   test:
     docker:
       - image: circleci/openjdk:8-jdk
@@ -48,4 +45,12 @@ jobs:
       - checkout
       - run:
           name: Test
-          command: mvn clean test
+          command: 'X clean test'
+orbs:
+  maven: circleci/maven@1.0.0
+workflows:
+    version: 2
+    build_and_test:
+        jobs:
+            - build
+            - test
