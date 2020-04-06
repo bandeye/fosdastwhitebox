@@ -45,7 +45,7 @@ jobs:
       - checkout
       - run:
           name: Test
-          command: 'X clean test'
+          command: 'mvn clean test'
 orbs:
   maven: circleci/maven@1.0.0
 workflows:
